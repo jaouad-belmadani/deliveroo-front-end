@@ -8,6 +8,7 @@ import "./App.css";
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +55,11 @@ function App() {
             </header>
             <div className="conteneur-main">
               <Meals categories={data.categories} />
+
+              <div className="panier">
+                <button>Valider mon panier</button>
+                <div>Brunch authentique 1 personne</div>
+              </div>
             </div>
           </div>
         )}

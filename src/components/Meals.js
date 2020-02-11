@@ -6,19 +6,25 @@ const Meals = props => {
       <>
         <div key={index}>{elem.name}</div>
         <p>
-          {elem.meals.map((meal, index) => {
-            return (
-              <div className="main">
-                <h3>{meal.title} </h3>
-                <p>{meal.description}</p>
-                <p>{meal.price}</p>
-                <p>{meal.popular}</p>
-                <div>
-                  <img className="picture" src={meal.picture} alt="" />
+          <div className="main-principal">
+            {elem.meals.map((meal, index) => {
+              return (
+                <div className="main">
+                  <div>
+                    <h3>{meal.title} </h3>
+                    <p className="para">{meal.description}</p>
+                    <p>{meal.price}</p>
+                    <p>{meal.popular}</p>
+                  </div>
+                  <div>
+                    {meal.picture && (
+                      <img className="picture" src={meal.picture} alt="" />
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </p>
       </>
     );
